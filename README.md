@@ -71,4 +71,4 @@ There are many other features we could have included to make the app better, and
 - Deploy
 
 
-**note** the original repo and associated GitHub project for this project are organization-locked, so this is a cloned and slightly modified version.
+**note** the original repo and associated GitHub project for this project are organization-locked, so this repo is a cloned and slightly modified version.
