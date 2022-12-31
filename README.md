@@ -7,6 +7,21 @@ Technology Stack:
 - Database: PostgreSQL
 - Container: Docker
 
+**Primary Features**:
+- Login or register account, log out
+- Reset password if forgotten
+- View and edit profile
+- Change password
+- View upcoming games with three filters
+  - View date, time, location, and more for each game
+ - Create and join teams for a sport
+ - Explore sports and teams
+ - View your teams
+ - View all players and player profiles
+  - Search players by multiple fields
+
+
+
 **How to run locally**: 
 - Download and open Docker Desktop
 - Open or clone repository and navigate to 'project-code" directory
@@ -18,3 +33,42 @@ Technology Stack:
 **or,**
 
 ### If you don't want to try IMProved locally, check out the demo video for a brief overview of the application.
+
+
+
+#### Ideas for future improvement: 
+Given a four week timeline, we had to prioritize the most important features to include.   
+There are many other features we could have included to make the app better, and would implement if we decided to deploy officially.
+
+- Edit, delete teams
+- Add sport button
+- Export games to calendar
+- Server-side hosting of user media
+- Message/announcement system
+- Support for photos/images of games and teams
+- Option to add team photo
+- Dark mode
+- Manually set team captain
+- Remove player options
+- Scheduling algorithm
+- Leagues or divisions for teams
+- Team/player ranking system
+- Text or email notifications for games
+- Player availability form for scheduling
+- Advanced filtering for games, players, and more
+- Search games, teams, and more
+- Seasons for sports
+- Dynamic timezone rendering
+- Automatic or improved game record keeping system
+- Improved score/winner input for previous games
+- Divisions by college or location
+- Mark players as injured, reserve, starters, etc
+- Delete or edit game
+- Teams: minimum, maximum number of players
+- Page system when rendering a lot of data
+- Better game sorting system
+- Clickable team pages
+- Tooltips for faster information access
+- Improve server routing
+- Utilize more external CSS
+- Deploy
