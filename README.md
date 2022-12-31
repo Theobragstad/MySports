@@ -20,6 +20,7 @@ ___
  - View all players and player profiles
   - Search players by multiple fields (class year, username, name, player ID, sport, team, gender)
   - Connect with players by phone number on their profile
+ - Admin users can schedule new games
 ___
 **How to run locally**: 
 - Download and open Docker Desktop
