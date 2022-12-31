@@ -69,3 +69,6 @@ There are many other features we could have included to make the app better, and
 - Improve server routing
 - Utilize more external CSS
 - Deploy
+
+
+**note** the original repo and associated GitHub project for this project are organization-locked, so this is a cloned and slightly modified version.
