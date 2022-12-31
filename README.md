@@ -1,12 +1,12 @@
 ## IMProved
 IMProved is a comprehensive and easy to use application for the participation in and management of intramural/club/recreational sports. The app provides players with a way to manage and stay up-to-date with their games, teams, and more.
-
+___
 Technology Stack: 
 - Frontend: EJS, HTML, CSS, Bootstrap
 - Backend: JavaScript (Node.js, Express)
 - Database: PostgreSQL
 - Container: Docker
-
+___
 **Primary Features**:
 - Login or register account, log out
 - Reset password if forgotten
@@ -18,10 +18,9 @@ Technology Stack:
  - Explore sports and teams
  - View your teams
  - View all players and player profiles
-  - Search players by multiple fields
-
-
-
+  - Search players by multiple fields (class year, username, name, player ID, sport, team, gender)
+  - Connect with players by phone number on their profile
+___
 **How to run locally**: 
 - Download and open Docker Desktop
 - Open or clone repository and navigate to 'project-code" directory
@@ -29,16 +28,13 @@ Technology Stack:
   - Contact me (theo.bragstad@colorado.edu) for .env details. This is private information and is not pushed to GitHub.
 - Run 'docker compose up'
 - Navigate to localhost:3000 in a web browser
-
+___
 **or,**
-
 ### If you don't want to try IMProved locally, check out the demo video for a brief overview of the application.
-
-
-
+___
 #### Ideas for future improvement: 
 Given a four week timeline, we had to prioritize the most important features to include.   
-There are many other features we could have included to make the app better, and would implement if we decided to deploy officially.
+There are many other features we could have included to make the app better, and would implement if we decided to deploy officially.  
 
 - Edit, delete teams
 - Add sport button
