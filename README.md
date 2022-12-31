@@ -1,5 +1,5 @@
 ## IMProved
-IMProved is a comprehensive and easy to use application for the participation in and management of intramural/club/recreational sports. The app provides players with a way to manage and stay up-to-date with their games, teams, and more.
+IMProved is a comprehensive and easy to use web app for the participation in and management of intramural/club/recreational sports. It provides players with a way to manage and stay up-to-date with their games, teams, and more.
 ___
 Technology Stack: 
 - Frontend: EJS, HTML, CSS, Bootstrap
