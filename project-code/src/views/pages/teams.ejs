@@ -1,0 +1,111 @@
+<%- include ('../partials/header') %>
+  <%- include ('../partials/menu') %>
+
+    <main>
+      <div class="col">
+        <%- include ('../partials/message') %>
+      </div>
+      <div class="container text-center p-4">
+        <!-- THE REST OF YOUR HTML CODE GOES HERE -->
+        
+        <button class="btn rounded-pill"
+        style="background-color:#1e90ff; color:#ffffff; position: absolute;right: 100px;top:110px" data-bs-toggle="modal" data-bs-target="#CreateModal">Create Team</button>
+        <form action="/team/create" method="POST">
+          <div class="modal fade" id="CreateModal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header text-center">
+                <h1 class="modal-title fs-3">Create Team</h1>
+                <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="teamName" id="teamName" placeholder="Team name" required>
+                    <input type="hidden" class="form-control" name="sportID" id="sportID" value=<%=sportID%>>
+                  </div>
+        
+                </div>
+                <div class="modal-footer">
+                  <button type="reset" class="btn rounded-pill" style="background-color:#dedee3; color:#9c9cac" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn rounded-pill" style="background-color:#e8fcec; color:#17d475">Create Team</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <h1 style="padding-top:2vh; padding-bottom:2vh">Discover Teams</h1>
+        <% if(teams.length == 0) { %>
+          <h3 style="padding-top:5vh;color:#ff8a8a;">No teams yet</h3>
+          <% } else if(teams.length==1){ %>
+        
+          <div style="padding-bottom:2vh">
+          <em ><%=teams.length%> team</em>
+        </div>
+        <% } else {%>
+          <div style="padding-bottom:2vh">
+
+          <em><%=teams.length%> teams</em>
+        </div>
+  
+          <% } %>
+
+        <%teams.forEach(function(team, index){ 
+          let count = 0;
+          teamsToPlayers.forEach(function(t2p){
+            if(t2p.teamid == team.teamid){
+              count ++;
+            }
+          })
+          let captainID = 0;
+          teamsToCaptains.forEach(function(t2f){
+            if(t2f.teamid == team.teamid){
+              captainID = t2f.playerid
+
+            }
+          })
+          let captainName = ''
+          playerNames.forEach(function(playerName){
+            if(playerName.playerid == captainID){
+              captainName = playerName.playername
+
+            }
+          })
+          
+          if((index%2)==0){%>
+          <div class="row p-2">
+            <%}%>
+              <div class="col sm-6">
+                <div class="card bg-light h-100">
+                  <div class="card-header"><h5><%=team.teamname%></h5></div>
+                  <div class="card-body d-flex flex-column">
+                    <div class="container mt-auto">
+                      <p class="card-text">Captain: <%=captainName%>
+                        <!-- Use teamsToplayers db table -->
+                      </p>
+                      <p class="card-text">Number of players: <%=count%>
+                        <!-- Use teamsToplayers db table -->
+                      </p>
+                      <p class="card-text">
+                      </p>
+                    </div>
+                    <form action="/team/join" method="post">
+                      <button class="btn btn-outline-primary mt-auto" name="teamid" value=<%=team.teamid%> >Join Team</button>
+                    </form>
+                    <!-- Button should redirect to a page with a list of teams -->
+                  </div>
+                </div>
+              </div>
+              <% if(index==teams.length-1 && index%2==0){%>
+                <div class="col sm-6">
+                </div>
+          </div>
+          <%} if(index%2 !=0){%>
+      </div>
+      <%} })%>
+
+
+
+    </main>
+
+    <%- include ('../partials/footer') %>

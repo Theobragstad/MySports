@@ -1,0 +1,91 @@
+<%- include ('../partials/header') %>
+  <%- include ('../partials/menu') %>
+
+    <main>
+      <div class="col">
+        <%- include ('../partials/message') %>
+      </div>
+      <div class="container text-center p-4">
+        <!-- THE REST OF YOUR HTML CODE GOES HERE -->
+        <h1 style="padding-top:2vh; padding-bottom:2vh">Discover Sports</h1>
+        <% if(sports.length == 0) { %>
+          <div style="padding-bottom:2vh">
+
+          <h4 style="padding-top:5vh;color:#ff8a8a;">No sports yet </h4>
+        </div>
+        <% } else if(sports.length==1){ %>
+          <div style="padding-bottom:2vh">
+          <em ><%=sports.length%> sport</em>
+        </div>
+        <% } else {%>
+          <div style="padding-bottom:2vh">
+
+          <em><%=sports.length%> sports</em>
+        </div>
+  
+          <% } %>
+
+        <%sports.forEach(function(sport, index){
+          let count = 0;
+          teamsToSports.forEach(function(t2s, index){
+            if(t2s.sportid == sport.sportid){
+              count ++;
+            }
+          })
+          const sportName = sport.sportname;
+          const alteredSportName = sportName.replace(' ', '%20');
+          let hrefName="/teams/" + alteredSportName; if((index%2)==0){%>
+          <div class="row p-2">
+            <%}%>
+              <div class="col sm-6">
+                <div class="card bg-light h-100">
+                  <div class="card-header"><h5><%=sport.sportname%></h5></div>
+                  <div class="card-body d-flex flex-column">
+                    <div class="container mt-auto">
+                      <p class="card-text"><b>Number of teams:</b> <%=count%>
+                        <!-- Use teamsToSports db table -->
+                      </p>
+                      <p class="card-text"><b>Description:</b> <%=sport.sportdesc%>
+                        <!-- Maybe add description to sports db? eg. sport.description -->
+                      </p>
+                      <p class="card-text"></p>
+                    </div>
+
+                    <a href=<%=hrefName %> class="btn btn-outline-primary mt-auto">Join/Create Team</a>
+                    <!-- Button should redirect to a page with a list of teams -->
+                  </div>
+                </div>
+              </div>
+
+         <% if(index == sports.length-1 && index%2 == 0){%>
+            <div class="col sm-6">
+            </div>
+          </div>
+          <%}
+           if(index%2 != 0){%>
+          </div>
+          <%} 
+          
+        })%>
+
+    <div>
+      <div style="padding-top:2vh;text-align:center;padding-bottom:2vh;">
+        <button class="btn rounded-pill" style="background-color:#d8d8d8;color:#595959;;font-size:.75vw;" data-bs-toggle="modal" data-bs-target="#addSportModal">Don't see the sport you want?</button>
+      </div>
+
+      <div class="modal fade" id="addSportModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog" >
+        <div class="modal-content">
+          <div class="modal-body text-center" >
+            <h3>Adding Sports</h3>
+            <p>More sports will be added as needed to respond to demand.</p>
+            <p>Support for additional sports can also be requested by contacting the team <a href="mailto:help@improved.com">here.</a></p>
+            <p>Thank you!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include ('../partials/footer') %>

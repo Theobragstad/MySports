@@ -1,0 +1,142 @@
+<%- include ('../partials/header') %>
+<%- include ('../partials/menu') %>
+
+<main>
+<div class="col">
+    <%- include ('../partials/message') %>
+  </div>
+  <div class="container text-center" style="padding-bottom:10vh;">
+    <h1 style="padding-top:2vh;padding-bottom:2vh;">Your upcoming games</h1>
+    <h6 style="color:#949494;">Upcoming games that your team(s) are playing in.</h6>
+    <h6 style="color:#949494;">If there are no games, then all games in the database have passed.</h6>
+    <div style="padding-top:2vh;">
+      <button class="btn rounded-pill" style="background-color:#d8d8d8;color:#595959;font-size:.75vw;" data-bs-toggle="modal" data-bs-target="#howToScheduleModal">Game scheduling</button>
+    </div>
+
+    <div style="padding-top:2vh;padding-bottom:3vh;">
+      <a href="allUpcomingGames" class="btn rounded-pill" style="background-color:#1e90ff;color:#ffffff;">All upcoming games</a>
+      <a href="allGames" class="btn rounded-pill" style="background-color:#1e90ff;color:#ffffff;">All games</a>
+
+    </div>
+
+    <% if(locals.error || teams.length == 0) {  %>
+      <h4 style="padding-top:5vh;color:#ff8a8a;">You haven't joined any teams yet. <br>Join teams by going to the <a href="/sports"> sports</a> page.</h4>
+    <% } else if(games.length == 0) { %>
+      <h4 style="padding-top:5vh;color:#17d475;">You have no upcoming games</h4>
+      <% var today = new Date() %>
+    <% } else { %>
+
+      <% var today = new Date() %>
+      <% var n = 0 %>
+      <% const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] %>
+      <% const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] %>
+
+
+      <% games.forEach(function(game) { %>
+        <% var hour = parseInt(game.time.substring(0,2)) %>
+        <% var min = parseInt(game.time.substring(3,5)) %>
+        <% var am = true %>
+        <% var leadingZero = false %>
+        <% if(hour > 12) {hour -= 12;} %>
+        <% if(hour >= 12) {am = false;} %>
+        <% if(min < 10) { %>
+          <% var time = String(hour) + ':0' + String(min) %>
+        <% } else { %>
+          <% var time = String(hour) + ':' + String(min) %>
+        <% } %> 
+        
+        <% if(!((game.gamedate.getFullYear() < today.getFullYear()) || ((game.gamedate.getFullYear() == today.getFullYear()) && (game.gamedate.getMonth() < today.getMonth()))  ||   ((game.gamedate.getFullYear() == today.getFullYear()) && (game.gamedate.getMonth() == today.getMonth()) && (game.gamedate.getDate() < today.getDate())))) { %>
+          <div class="card text-white bg-dark mb-3 text-center mx-auto d-flex" style="width:50%;">
+            <div class="card-body">
+              <h1 style="padding-top:2vh;color:#1e90ff;"><%= weekdays[game.gamedate.getDay()] %> <%= months[game.gamedate.getMonth()] %> <%= game.gamedate.getDate() %></h1>
+              <h5><%= game.gamedate.getFullYear() %></h5>
+             
+              <div class="d-flex justify-content-center" style="padding-bottom:2vh;">
+                <% let hrefName="/team/" + game.team1id %>
+                  <a href= <%= hrefName %> style="background-color:#1e90ff;color:white;font-size:18px;" class="btn rounded-pill"><%= game.team1 %></a>
+                <span style="color:#ffffff;font-size:1vw;"> vs </span>
+                <% hrefName="/team/" + game.team2id %>
+                  <a href= <%= hrefName %> style="background-color:#1e90ff;color:white;font-size:18px;" class="btn rounded-pill"><%= game.team2 %></a>
+              </div>
+            
+              <div class="row justify-content-center">
+                <h5 class="col-4">
+                  Sport
+                </h5>
+                <h5 class="col-4">
+                 <span style="color:#1e90ff;"><%= game.sportname %></span>
+                </h5>
+              </div>
+              <div class="row justify-content-center">
+                <h5 class="col-4">
+                  ID
+                </h5>
+                <h5 class="col-4">
+                  <span style="color:#1e90ff;"><%= game.gameid %></span>
+                </h5>
+              </div>
+              <div class="row justify-content-center">
+                <h5 class="col-4">
+                  Time
+                </h5>
+                <h5 class="col-4">
+                  <span style="color:#1e90ff;">
+                    <%= time %>
+                    <% if(am) { %>
+                      AM
+                    <% } else { %>
+                      PM
+                    <% } %>
+                  </span>
+                </h5>
+              </div>
+              <div class="row justify-content-center">
+                <h5 class="col-4">
+                  Location
+                </h5>
+                <h5 class="col-4">
+                  <span style="color:#1e90ff;"><%= game.location %></span>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <% n++ %>
+        <% } %>
+      <% }); %>
+    <% } %>
+
+    <% if(n >= 0) { %>
+      <p><i><%= n %> game<%- (n == 1) ? '' : 's' %> found</i></p>
+    <% } %>
+
+  </div>
+
+  <div class="modal fade" id="howToScheduleModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog" >
+      <div class="modal-content">
+        <div class="modal-body text-center" >
+          <h3>Game Scheduling</h3>
+          <p>
+            Prior to each new season and after team sign-ups have closed, 
+            an email will be sent to all players notifying them of the scheduling period,
+            and an availability form will be posted on each player's profile. 
+          </p>
+          <p>We will then schedule games on dates and times that maximize available players for each team.</p>
+          <p>
+            We will follow up as needed to resolve any logistical issues, and
+            schedules will be posted by start of each season.
+          </p>
+          <p>
+            Additional games can be requested throughout the season by contacting the scheduling team <a href="mailto:help@improved.com">here.</a>
+          </p>
+          <p>Thank you!</p>
+          <br>
+          <em>Admin users: to add new games, go to the 'All Games' page.</em>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include ('../partials/footer') %>

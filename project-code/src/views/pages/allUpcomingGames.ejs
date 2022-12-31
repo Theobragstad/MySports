@@ -1,0 +1,97 @@
+<%- include ('../partials/header') %>
+<%- include ('../partials/menu') %>
+
+<main>
+  <div class="container text-center" style="padding-bottom:10vh;">
+    <h1 style="padding-top:2vh; padding-bottom:2vh">All upcoming games</h1>
+    <h6 style="color:#949494;">Upcoming games for all teams.</h6>
+    <h6 style="color:#949494;">If there are no games, then all games in the database have passed.</h6>
+
+    <div style="padding-top:2vh;padding-bottom:3vh;">
+      <a href="yourUpcomingGames" class="btn rounded-pill" style="background-color:#1e90ff;color:#ffffff;">Your upcoming games</a>
+      <a href="allGames" class="btn rounded-pill" style="background-color:#1e90ff;color:#ffffff;">All games</a>
+    </div>
+
+    <% if(games.length == 0) { %>
+      <h4 style="padding-top:5vh;color:#17d475;">No upcoming games</h4>
+    <% } %>
+
+    <% var today = new Date() %>
+    <% var n = 0 %>
+    <% const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] %>
+    <% const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] %>
+
+    <% games.forEach(function(game) { %>
+      <% var hour = parseInt(game.time.substring(0,2)) %>
+      <% var min = parseInt(game.time.substring(3,5)) %>
+      <% var am = true %>
+      <% var leadingZero = false %>
+      <% if(hour > 12) {hour -= 12;} %>
+      <% if(hour >= 12) {am = false;} %>
+      <% if(min < 10) { %>
+        <% var time = String(hour) + ':0' + String(min) %>
+      <% } else { %>
+        <% var time = String(hour) + ':' + String(min) %>
+      <% } %> 
+
+        <% if(!((game.gamedate.getFullYear() < today.getFullYear()) || ((game.gamedate.getFullYear() == today.getFullYear()) && (game.gamedate.getMonth() < today.getMonth())) || ((game.gamedate.getFullYear() == today.getFullYear()) && (game.gamedate.getMonth() == today.getMonth()) && (game.gamedate.getDate() < today.getDate())))) { %>
+          <div class="card text-white bg-dark mb-3 text-center mx-auto d-flex" style="width:50%;">
+            <div class="card-body">
+              <h1 style="padding-top:2vh;color:#1e90ff;"><%= weekdays[game.gamedate.getDay()] %> <%= months[game.gamedate.getMonth()] %> <%= game.gamedate.getDate() %></h1>
+              <h5><%= game.gamedate.getFullYear() %></h5>
+              <h3 style="color:#1e90ff;"><%= game.team1 %><span style="color:#ffffff;font-size:1vw;"> vs </span><%= game.team2 %></h3>
+            
+              <div class="row justify-content-center">
+                <h5 class="col-4">
+                  Sport
+                </h5>
+                <h5 class="col-4">
+                 <span style="color:#1e90ff;"><%= game.sportname %></span>
+                </h5>
+              </div>
+              <div class="row justify-content-center">
+                <h5 class="col-4">
+                  ID
+                </h5>
+                <h5 class="col-4">
+                  <span style="color:#1e90ff;"><%= game.gameid %></span>
+                </h5>
+              </div>
+              <div class="row justify-content-center">
+                <h5 class="col-4">
+                  Time
+                </h5>
+                <h5 class="col-4">
+                  <span style="color:#1e90ff;">
+                    <%= time %>
+                    <% if(am) { %>
+                      AM
+                    <% } else { %>
+                      PM
+                    <% } %>
+                  </span>
+                </h5>
+              </div>
+              <div class="row justify-content-center">
+                <h5 class="col-4">
+                  Location
+                </h5>
+                <h5 class="col-4">
+                  <span style="color:#1e90ff;"><%= game.location %></span>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <% n++ %>
+      <% } %>
+    <% }); %>
+
+    <% if(n >= 0) { %>
+      <p><i><%= n %> game<%- (n == 1) ? '' : 's' %> found</i></p>
+    <% } %>
+
+  </div>
+</main>
+
+<%- include ('../partials/footer') %>

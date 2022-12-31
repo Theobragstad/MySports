@@ -1,0 +1,154 @@
+<%- include ('../partials/header') %>
+<%- include ('../partials/menu') %>
+
+<main>
+ 
+  <% if(result == "sportError" || result == "onTeamError") { %>
+    <div class="text-center" style="padding-top:3vh">
+      <div class="btn rounded-pill alert alert-danger"> 
+          You are either already on this team or already on a team for this sport. You cannot be on more than one team for a single sport.
+      </div>
+    </div>
+    <% } else if(result == "success") { %>
+        <div class="text-center" style="padding-top:3vh">
+        <div class="btn rounded-pill alert alert-success"> 
+            Successfully joined <%= team.teamname %>
+        </div>
+      </div>
+      <% }  %>
+
+  <div class="text-center" style="padding-top:2vh">
+    <h1><%= team.teamname %></h1>
+    <h6>ID: <%= team.teamid %></h6>
+    <h6> <%=  sport[0].sportname%></h6>
+  </div>
+
+
+  <% if(onTeam.length > 0) { %> 
+    <div style="padding-left:2vw;">
+      <form action="/leaveTeam" method="POST">
+        <input name="teamid" id="teamid" value="<%=team.teamid %>" type="hidden"> 
+        <% if (teamsToCaptains.playerid === user.playerid) { %>
+          <input name="iscaptain" id="iscaptain" value="true" type="hidden"> 
+        <% } else {%>
+        <input name="iscaptain" id="iscaptain" value="false" type="hidden"> 
+        <% } %>
+        <input name="teamsize" id="teamsize" value="false" type="hidden"> 
+
+
+
+    <button type="submit" class="btn rounded-pill" style="background-color:#ffe5ec;color:#fb6f92">Leave team<span>      <a class="btn rounded-pill" style="background-color:#d8d8d8;color:#595959;;font-size:.75vw;" data-bs-toggle="modal" data-bs-target="#leaveTeamModal"><strong>?</strong></a>
+    </span></button>
+
+   
+    
+  </form>
+  </div>
+    <% } else { %>
+
+<form action="/team/join" method="post">
+  <div style="padding-left:2vw">
+                      <button class="btn rounded-pill" style="background-color:#e8fcec; color:#17d475" name="teamid" value=<%=team.teamid%> >Join team</button>
+                    </form>
+                  </div>
+
+      <% } %>
+
+<!--    <% if (teamsToCaptains.playerid === user.playerid) { %>-->
+<!--      <div style="padding-left:2vw;padding-top:1vh">-->
+<!--      <form method="get" action="/team/delete/<%= team.teamid %>">-->
+<!--        <button class="btn rounded-pill" style="background-color:#ff1e65c1; color:#ffffff;">Delete team</button>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  -->
+<!--      <% } %>-->
+
+
+
+
+
+
+<div class="container text-center p-4" style = "position: absolute; right: 200px;top: 200px;width: 30%;">
+    <h3>Record</h3>
+    <p class="text"><b>Total wins: </b><%=numWinners.count%>
+        <!-- Maybe add description to sports db? eg. sport.description -->
+      </p>
+
+</div>
+    <div class="container text-center p-4" style = "position: absolute; right: 200px;top: 300px;width: 30%;">
+        <h3>Players</h3>
+    <table class="table">
+        <thead>
+          <th scope="row"> Player Name </th>
+          <td></td>
+        </thead>
+        <tbody>
+          <%players.forEach(function(player, index){%>
+            <tr>
+              <th scope="row">
+                <%= player.playername%>
+              </th>
+              <td>
+                <% if(teamsToCaptains.playerid == player.playerid){%>
+                    Captain
+                <%}%>
+              </td>
+
+            </tr>
+            <% }); %>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="container text-center p-4" style = "position: absolute; left: 200px;top: 200px;width: 30%;">
+        <h3>Games</h3>
+        <% if(games.length == 0) { %>
+          <h3 style="padding-top:5vh;color:#ff8a8a;">No games yet</h3>
+        <% } %>
+        <%teamGames.forEach(function(game, index){
+            %>
+        <div class="row p-2">
+            <div class="card bg-light h-100">
+              <% if(games[2*index]) { %>
+                <div class="card-header"><h5><%=games[2*index].teamname%> vs <%=games[2*index+1].teamname%></h5></div>
+              <% } %>
+                <div class="card-body d-flex flex-column">
+                  <div class="container mt-auto">
+                    <p class="card-text"><b>Game Date:</b> <%= game.gamedate.getMonth()+1 %>-<%= game.gamedate.getDate() %>-<%= game.gamedate.getFullYear() %>
+                      <!-- Use teamsToSports db table -->
+                    </p>
+                    <p class="card-text"><b>Game Time:</b> <%= game.time.substring(0,5) %>
+                        <!-- Maybe add description to sports db? eg. sport.description -->
+                      </p>
+                    <p class="card-text"><b>Game Location:</b> <%= game.location %>
+                      <!-- Maybe add description to sports db? eg. sport.description -->
+                    </p>
+                    <p class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <%})%>
+    </div>
+
+
+    <div>
+        
+
+        <div class="modal fade" id="leaveTeamModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog" >
+                <div class="modal-content">
+                    <div class="modal-body text-center" >
+                        <h3>Leaving a team</h3>
+                        <p>If you are the only member of a team, you cannot leave it.<br>If you leave a team as a captain, the most senior remaining player will become the new captain. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</main>
+
+<div style="padding-top:370vh">
+<%- include ('../partials/footer') %>
+</div>
