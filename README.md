@@ -9,6 +9,7 @@ Technology Stack:
 ___
 **Primary Features**:
 - Login or register account, log out
+  - Session management
 - Reset password if forgotten
 - View and edit profile
 - Change password
@@ -70,5 +71,5 @@ There are many other features we could have included to make the app better, and
 - Utilize more external CSS
 - Deploy
 
-
+___
 **note** the original repo and associated GitHub project for this project are organization-locked, so this repo is a cloned and slightly modified version.
