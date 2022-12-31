@@ -50,7 +50,7 @@ There are many other features we could have included to make the app better, and
 - Scheduling algorithm
 - Leagues or divisions for teams
 - Team/player ranking system
-- Text or email notifications for games
+- Text or email notifications for games and other information
 - Player availability form for scheduling
 - Advanced filtering for games, players, and more
 - Search games, teams, and more
