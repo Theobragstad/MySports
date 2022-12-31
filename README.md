@@ -36,7 +36,8 @@ ___
 Given a four week timeline, we had to prioritize the most important features to include.   
 There are many other features we could have included to make the app better, and would implement if we decided to deploy officially.  
 
-- Edit, delete teams
+- Edit or delete teams, games, players
+- Admin account mode
 - Add sport button
 - Export games to calendar
 - Server-side hosting of user media
@@ -59,7 +60,6 @@ There are many other features we could have included to make the app better, and
 - Improved score/winner input for previous games
 - Divisions by college or location
 - Mark players as injured, reserve, starters, etc
-- Delete or edit game
 - Teams: minimum, maximum number of players
 - Page system when rendering a lot of data
 - Better game sorting system
