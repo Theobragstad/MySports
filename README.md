@@ -5,6 +5,7 @@ Technology Stack:
 - Frontend: EJS, HTML, CSS, Bootstrap
 - Backend: JavaScript (Node.js, Express)
 - Database: PostgreSQL
+- Container: Docker
 
 How to run locally: 
 - Download and open Docker Desktop
