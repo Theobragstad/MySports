@@ -31,8 +31,8 @@ ___
 - Run 'docker compose up'
 - Navigate to localhost:3000 in a web browser
 ___
-**or,**
-### If you don't want to try IMProved locally, check out the demo video for a brief overview of the application.
+**note** the original repo and associated GitHub project for this project are organization-locked, so this repo is a cloned and slightly modified version.
+
 ___
 #### Ideas for future improvement: 
 Given a four week timeline, we had to prioritize the most important features to include.   
@@ -71,5 +71,5 @@ There are many other features we could have included to make the app better, and
 - Utilize more external CSS
 - Deploy
 
-___
-**note** the original repo and associated GitHub project for this project are organization-locked, so this repo is a cloned and slightly modified version.
+https://user-images.githubusercontent.com/48075045/210167806-9680273c-4f24-4205-b792-3b837503d7f1.mp4
+
