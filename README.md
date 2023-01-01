@@ -1,5 +1,11 @@
 ## IMProved
-IMProved is a comprehensive and easy to use web app for the participation in and management of intramural/club/recreational sports. It provides players with a way to manage, explore, and stay up-to-date with their games, teams, other players, and more.
+IMProved is a comprehensive and easy to use web app for the participation in and management of intramural/club/recreational sports, especially for intramural college teams. It provides players with a way to manage, explore, and stay up-to-date with their games, teams, other players, and more.
+
+It was developed in a small team as a simulated real-world project following Agile methodology with extensive documentation, use of Git/GitHub version control/project management, pull requests, standup meetings, testing, and presentation/deliverables.  
+
+**note** the original repo and associated GitHub project for this project are organization-locked, so this repo is a cloned and slightly modified version  containing the essentials plus various minor changes.
+
+
 ___
 Technology Stack: 
 - Frontend: EJS, HTML, CSS, Bootstrap
@@ -31,12 +37,9 @@ ___
 - Run 'docker compose up'
 - Navigate to localhost:3000 in a web browser
 ___
-**note** the original repo and associated GitHub project for this project are organization-locked, so this repo is a cloned and slightly modified version.
-
-___
 #### Ideas for future improvement: 
 Given a four week timeline, we had to prioritize the most important features to include.   
-There are many other features we could have included to make the app better, and would implement if we decided to deploy officially.  
+There are many other features we could have included to make the app better, and would implement if we decided to deploy the app officially.  
 
 - Edit or delete teams, games, players
 - Admin account mode
