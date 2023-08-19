@@ -1,12 +1,12 @@
-#### <img src="/project-code/src/resources/img/logo.png" width="70px"/>
+#### <img src="/project-code/src/resources/img/logo.png" width="120px"/>
 IMProved is a comprehensive and easy to use web app for the participation in and management of intramural/club/recreational sports, especially for intramural college teams. It provides players with a way to manage, explore, and stay up-to-date with their games, teams, other players, and more.
 
 It was developed in large part by myself as a member of a small team. The project was intended to simulate a real-world project following professional methodology and practices with extensive documentation, use of Git/GitHub for version control/project management, pull requests, standup meetings, testing, and presentation/deliverables.  
 
-Note: the original repo and associated GitHub project for this project are organization-locked, so this repo is a cloned and slightly modified version containing the essentials plus various minor changes.
+Note: This repository is a cloned and slightly modified version of the original one.
 <br>
 
-Technology Stack: 
+Stack: 
 - Frontend: EJS, HTML, CSS, Bootstrap
 - Backend: JavaScript (Node.js, Express)
 - Database: PostgreSQL
@@ -77,4 +77,5 @@ There are many other features we could have included to make the app even better
 - [ ] Utilize more external CSS
 - [ ] Deploy
 
-https://user-images.githubusercontent.com/48075045/210167806-9680273c-4f24-4205-b792-3b837503d7f1.mp4
+
+https://github.com/Theobragstad/IMProved/assets/48075045/646182a4-e860-4553-9588-9e351dec3062
