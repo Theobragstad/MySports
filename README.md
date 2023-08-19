@@ -38,7 +38,7 @@ How to run locally:
 - Go to localhost:3000 in a browser
 
 
-Future improvement ideas: 
+Future improvements: 
 Given a four week timeline, we had to prioritize the most important features to include.   
 There are many other features we could have included to make the app even better, and would implement if we decided to deploy the app officially.  
 
