@@ -79,5 +79,6 @@ There are many other features we could have included to make the app even better
 - [ ] Clickable team pages
 - [ ] Tooltips for faster information access
 - [ ] Improve server routing
-- [ ] Utilize more external CSS
+- [ ] Utilize more external CSS and better design CSS structure/hierarchies
+- [ ] Improve code readability and formatting
 - [ ] Deploy
