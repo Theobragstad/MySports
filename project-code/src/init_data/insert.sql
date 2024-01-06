@@ -1,4 +1,3 @@
--- 6 sports
 INSERT INTO sports (sportName, sportDesc) VALUES ('Basketball','Players attempt to shoot the ball through the hoop on the opponent''s court, moving the ball by throwing and dribbling.');
 INSERT INTO sports (sportName, sportDesc) VALUES ('Volleyball','A game for two teams of six players, in which a large ball is hit by hand over a high net, the aim being to score points by making the ball reach the ground on the opponent''s side of the court.');
 INSERT INTO sports (sportName, sportDesc) VALUES ('Baseball','A bat and ball game in which the aim is to hit the ball and score runs by running around four bases.');
@@ -6,7 +5,7 @@ INSERT INTO sports (sportName, sportDesc) VALUES ('Soccer','Played between two t
 INSERT INTO sports (sportName, sportDesc) VALUES ('Football','A team sport played on a rectangular field with goalposts at each end. Each team attempts to advance an oval ball down the field into the end zone by running or passing it.');
 INSERT INTO sports (sportName, sportDesc) VALUES ('3x3 Basketball', 'A variation of basketball played on a half-court with just three players on each team.');
 
--- All passwords are asdf. 40 users
+-- All passwords are asdf
 INSERT INTO players (username, playerName, password, classYear, profilePhoto, joinDate, gender) VALUES ('leka5026', 'leo', '$2b$10$pSWjpntEzHInJozarXe4Z..5GM5QeUE/z3OEfK3NHdDS4tjPSj4Yu', 2023, '', '2022-11-11', 'Male');
 INSERT INTO players (username, playerName, password, classYear, profilePhoto, joinDate, email, phone, gender) VALUES ('thbr4871', 'theo', '$2b$10$pSWjpntEzHInJozarXe4Z..5GM5QeUE/z3OEfK3NHdDS4tjPSj4Yu', 2025, '', '2022-11-11', 'thbr4871@colorado.edu', '7202994398', 'Male');
 INSERT INTO players (username, playerName, password, classYear, profilePhoto, joinDate, gender) VALUES ('zach2898', 'zach', '$2b$10$pSWjpntEzHInJozarXe4Z..5GM5QeUE/z3OEfK3NHdDS4tjPSj4Yu', 2024, '', '2022-11-11', 'Male');
@@ -48,7 +47,6 @@ INSERT INTO players (username, playerName, password, classYear, profilePhoto, jo
 INSERT INTO players (username, playerName, password, classYear, profilePhoto, joinDate, gender) VALUES ('maka1000', 'marine', '$2b$10$pSWjpntEzHInJozarXe4Z..5GM5QeUE/z3OEfK3NHdDS4tjPSj4Yu', 2025, '', '2022-11-11', 'Female');
 INSERT INTO players (username, playerName, password, classYear, profilePhoto, joinDate, gender) VALUES ('camo1000', 'carolina', '$2b$10$pSWjpntEzHInJozarXe4Z..5GM5QeUE/z3OEfK3NHdDS4tjPSj4Yu', 2024, '', '2022-11-11', 'Female');
 
--- 20 teams
 INSERT INTO teams (teamName) VALUES ('Alpha Sonics');
 INSERT INTO teams (teamName) VALUES ('Venomous Busters');
 INSERT INTO teams (teamName) VALUES ('Ghost Piledrivers');
@@ -70,7 +68,6 @@ INSERT INTO teams (teamName) VALUES ('Spinning Rebels');
 INSERT INTO teams (teamName) VALUES ('Shaolin Sharpshooters');
 INSERT INTO teams (teamName) VALUES ('Kamikaze Chuckers');
 
--- 100 games
 INSERT INTO games (gameDate, time, location) VALUES ('2022-11-20', '12:00', 'Main Rec');
 INSERT INTO games (gameDate, time, location) VALUES ('2022-11-21', '12:05', 'Main Rec');
 INSERT INTO games (gameDate, time, location) VALUES ('2022-11-22', '12:10', 'Scott Carpenter Park');
@@ -172,7 +169,6 @@ INSERT INTO games (gameDate, time, location) VALUES ('2023-02-27', '13:00', 'Sco
 INSERT INTO games (gameDate, time, location) VALUES ('2023-02-28', '13:05', 'Kittredge Field');
 INSERT INTO games (gameDate, time, location) VALUES ('2023-03-01', '13:15', 'Franklin Field');
 
--- 20 Teams so 40 relations
 INSERT INTO teamsToSports (teamID, sportID) VALUES (1, 1);
 INSERT INTO teamsToSports (teamID, sportID) VALUES (2, 1);
 INSERT INTO teamsToSports (teamID, sportID) VALUES (3, 1);
@@ -194,7 +190,6 @@ INSERT INTO teamsToSports (teamID, sportID) VALUES (18, 5);
 INSERT INTO teamsToSports (teamID, sportID) VALUES (19, 5);
 INSERT INTO teamsToSports (teamID, sportID) VALUES (20, 5);
 
--- 100 Games, 2 teams per game, so 200 Relations
 INSERT INTO teamsToGames (teamID, gameID) VALUES (1, 1); 
 INSERT INTO teamsToGames (teamID, gameID) VALUES (3, 1); 
 INSERT INTO teamsToGames (teamID, gameID) VALUES (4, 6);
@@ -396,7 +391,6 @@ INSERT INTO teamsToGames (teamID, gameID) VALUES (18, 95);
 INSERT INTO teamsToGames (teamID, gameID) VALUES (19, 100);
 INSERT INTO teamsToGames (teamID, gameID) VALUES (17, 100);
 
--- teams to players. 40 players 20 teams. have 5 people on each teach, so 100 relations
 INSERT INTO teamsToPlayers (playerID, teamID) VALUES (11, 1);
 INSERT INTO teamsToPlayers (playerID, teamID) VALUES (25, 1);
 INSERT INTO teamsToPlayers (playerID, teamID) VALUES (26, 1);
@@ -498,7 +492,6 @@ INSERT INTO teamsToPlayers (playerID, teamID) VALUES (10, 20);
 INSERT INTO teamsToPlayers (playerID, teamID) VALUES (5, 20);
 INSERT INTO teamsToPlayers (playerID, teamID) VALUES (15, 20);
 
--- Teams to Captains. 20 teams, each with 1 captain. 20 relatins
 INSERT INTO teamsToCaptains (playerID, teamID) VALUES (11, 1);
 INSERT INTO teamsToCaptains (playerID, teamID) VALUES (19, 2);
 INSERT INTO teamsToCaptains (playerID, teamID) VALUES (25, 3);
@@ -520,10 +513,10 @@ INSERT INTO teamsToCaptains (playerID, teamID) VALUES (27, 18);
 INSERT INTO teamsToCaptains (playerID, teamID) VALUES (38, 19);
 INSERT INTO teamsToCaptains (playerID, teamID) VALUES (2, 20);
 
-INSERT INTO gamesToWinners (gameID, teamID) VALUES (1, 3); -- Players are: Team IDs [1,3] Team Names: [Alpha Sonics, Ghost Piledrivers]
-INSERT INTO gamesToWinners (gameID, teamID) VALUES (2, 6); -- Players are: Team IDs [6,7] Team Names: [Aero Planets, Fire United]
-INSERT INTO gamesToWinners (gameID, teamID) VALUES (3, 12); -- Players are: Team IDs [11,12] Team Names: [Reptile Assassins, Zulu Bulls]
-INSERT INTO gamesToWinners (gameID, teamID) VALUES (4, 14); -- Players are: Team IDs [14,16] Team Names: [Aero Predators, Dolphin Secret Agents]
-INSERT INTO gamesToWinners (gameID, teamID) VALUES (5, 20); -- Players are: Team IDs [19,20] Team Names: [Shaolin Sharpshooters, Kamikaze Chuckers]
-INSERT INTO gamesToWinners (gameID, teamID) VALUES (6, 2); -- Players are: Team IDs [2,4] Team Names: [Venomous Busters, Carnivore Xpress]
-INSERT INTO gamesToWinners (gameID, teamID) VALUES (7, 7); -- Players are: Team IDs [7,8] Team Names: [Fire United, Quicksilver Bullets]
+INSERT INTO gamesToWinners (gameID, teamID) VALUES (1, 3); 
+INSERT INTO gamesToWinners (gameID, teamID) VALUES (2, 6); 
+INSERT INTO gamesToWinners (gameID, teamID) VALUES (3, 12); 
+INSERT INTO gamesToWinners (gameID, teamID) VALUES (4, 14); 
+INSERT INTO gamesToWinners (gameID, teamID) VALUES (5, 20); 
+INSERT INTO gamesToWinners (gameID, teamID) VALUES (6, 2); 
+INSERT INTO gamesToWinners (gameID, teamID) VALUES (7, 7); 
