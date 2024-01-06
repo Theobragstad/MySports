@@ -33,8 +33,7 @@ Primary Features:
 How to run locally: 
 - Download and open Docker Desktop
 - Open or clone repository and navigate to 'project-code' directory
-- Add a .env file to the 'project-code' directory
-  - Contact me (theo.bragstad@colorado.edu) for .env requests. This is private information and is not given out freely.
+- Note that the .env file is included in the repo so you can try it yourself, but the email credentials are fake so the password reset feature will not work.
 - Run 'docker compose up'
 - Go to localhost:3000 in a browser
 
