@@ -1,6 +1,6 @@
 <% if (locals.message) { %>
     <div class="text-center" style="padding-top:1vh;">
-        <div class="btn rounded-pill alert alert-<%- locals.error ? 'danger' : 'success' %>" role="alert">
+        <div class="message rounded-pill alert alert-<%- locals.error ? 'danger' : 'success' %>" role="alert" style="padding:2px 5px;width:fit-content;margin: 0 auto;">
             <%= message %> 
         </div>
     </div>

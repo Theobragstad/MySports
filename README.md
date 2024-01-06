@@ -74,6 +74,3 @@ There are many other features we could have included to make the app even better
 - [ ] Improve server routing
 - [ ] Utilize more external CSS
 - [ ] Deploy
-
-
-https://github.com/Theobragstad/IMProved/assets/48075045/646182a4-e860-4553-9588-9e351dec3062

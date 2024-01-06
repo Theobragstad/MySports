@@ -1,5 +1,12 @@
-<div class="text-center" style="padding-top:10vh;">
-  <button class="btn rounded-pill" style="background-color:#e8fcec;color:#17d475;" data-bs-toggle="modal" data-bs-target="#registerModal">Create new account</button>
+<div class="text-center" style="padding-top: 10vh">
+  <button
+    class="btn rounded-pill"
+    style="background-color: #e8fcec; color: #17d475"
+    data-bs-toggle="modal"
+    data-bs-target="#registerModal"
+  >
+    Create new account
+  </button>
 </div>
 
 <form action="/register" method="POST">
@@ -8,29 +15,78 @@
       <div class="modal-content">
         <div class="modal-header text-center">
           <h1 class="modal-title fs-3">Sign Up</h1>
-          <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button
+            type="reset"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
 
         <div class="modal-body">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="username" id="username" placeholder="Username" maxlength="100" pattern="^[^\s]+(\s+[^\s]+)*$" title="No whitespace at beginning or end" required>
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              id="username"
+              placeholder="Username"
+              maxlength="100"
+              pattern="^[^\s]+(\s+[^\s]+)*$"
+              title="No whitespace at beginning or end"
+              required
+            />
           </div>
 
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="playername" id="playername" placeholder="Player name" maxlength="100" pattern="^[^\s]+(\s+[^\s]+)*$" title="No whitespace at beginning or end" required>
+            <input
+              type="text"
+              class="form-control"
+              name="playername"
+              id="playername"
+              placeholder="Player name"
+              maxlength="100"
+              pattern="^[^\s]+(\s+[^\s]+)*$"
+              title="No whitespace at beginning or end"
+              required
+            />
           </div>
 
           <div class="input-group mb-3">
-            <input type="password" class="form-control" name="password" id="password" placeholder="Password" maxlength="100" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}" title="Minimum 6 characters plus one of each: uppercase, lowercase, number, special character" required>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="password"
+              placeholder="Password"
+              maxlength="100"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}"
+              title="Minimum 6 characters plus one of each: uppercase, lowercase, number, special character"
+              required
+            />
           </div>
 
           <div class="input-group mb-3">
-            <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" maxlength="100" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}" required>
+            <input
+              type="password"
+              class="form-control"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+              maxlength="100"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}"
+              required
+            />
           </div>
 
           <div class="input-group mb-3">
             <label class="input-group-text" for="classYear">Class of</label>
-            <select class="form-select" name="classYear" id="classYear" required>
+            <select
+              class="form-select"
+              name="classYear"
+              id="classYear"
+              required
+            >
               <option selected disabled value=""></option>
               <option value="2023">2023</option>
               <option value="2024">2024</option>
@@ -46,29 +102,62 @@
               <option selected disabled value=""></option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
-              <option value="Other/Prefer not to say">Other/Prefer not to say</option>
+              <option value="Other/Prefer not to say">
+                Other/Prefer not to say
+              </option>
             </select>
           </div>
 
           <div class="input-group mb-3">
-            <input type="url" class="form-control" name="profilePhotoLink" id="profilePhotoLink" placeholder="Profile photo link (optional, only use images you own)">
+            <input
+              type="url"
+              class="form-control"
+              name="profilePhotoLink"
+              id="profilePhotoLink"
+              placeholder="Profile photo link (optional, only use images you own)"
+            />
           </div>
 
           <div class="input-group mb-3">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Email (optional, for account security/communication)">
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="email"
+              placeholder="Email (optional, for account security/communication)"
+            />
           </div>
 
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone number (optional, visible to other players)" pattern="^[0-9]{10}$" title="Must have format 1234567890">
+            <input
+              type="text"
+              class="form-control"
+              name="phone"
+              id="phone"
+              placeholder="Phone number (optional, visible to other players)"
+              pattern="^[0-9]{10}$"
+              title="Must have format 1234567890"
+            />
           </div>
-
         </div>
 
         <div class="modal-footer">
-          <button type="reset" class="btn rounded-pill" style="background-color:#dedee3; color:#9c9cac" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn rounded-pill" style="background-color:#e8fcec; color:#17d475">Sign Up</button>
+          <button
+            type="reset"
+            class="btn rounded-pill"
+            style="background-color: #dedee3; color: #9c9cac"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button
+            type="submit"
+            class="btn rounded-pill"
+            style="background-color: #e8fcec; color: #17d475"
+          >
+            Sign Up
+          </button>
         </div>
-        
       </div>
     </div>
   </div>
