@@ -1,4 +1,5 @@
-#### <img src="/project-code/src/resources/img/logo.png" width="120px"/>
+![Untitled drawing](https://github.com/Theobragstad/MySports/assets/48075045/ff9e9667-1068-423d-b615-aaa83da6dc33)
+
 MySports is a comprehensive and easy to use web app for the participation in and management of intramural/club/recreational sports, especially for intramural college teams. It provides players with a way to manage, explore, and stay up-to-date with their games, teams, other players, and more.
 
 It was developed in large part by myself as a member of a small team. The project was intended to simulate a real-world project following professional methodology and practices with extensive documentation, use of Git/GitHub for version control/project management, pull requests, standup meetings, testing, and presentation/deliverables.  
