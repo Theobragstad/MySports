@@ -3,8 +3,6 @@
 MySports is a comprehensive and easy to use web app for the participation in and management of intramural/club/recreational sports, especially for intramural college teams. It provides players with a way to manage, explore, and stay up-to-date with their games, teams, other players, and more.
 
 It was developed in large part by myself as a member of a small team. The project was intended to simulate a real-world project following professional methodology and practices with extensive documentation, use of Git/GitHub for version control/project management, pull requests, standup meetings, testing, and presentation/deliverables.  
-
-Note: This repository is a cloned and slightly modified version of the original one.
 <br>
 
 Stack: 
@@ -32,10 +30,10 @@ Primary Features:
 
 How to run locally: 
 - Download and open Docker Desktop
-- Open or clone repository and navigate to 'project-code' directory
-- Note that the .env file is included in the repo so you can try it yourself, but the email credentials are fake so the password reset feature will not work.
-- Run 'docker compose up'
-- Go to localhost:3000 in a browser
+- Open or clone repository and navigate to `project-code` directory
+- Note that the `.env` file is included in the repo so you can try it yourself, but the email credentials are fake so the password reset feature will not work.
+- Run `docker compose up`
+- Go to `localhost:3000` in a browser
 
 
 Future improvements: 
